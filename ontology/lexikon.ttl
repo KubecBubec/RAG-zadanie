@@ -1,0 +1,181 @@
+@prefix :     <http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#> .
+@prefix rkx:  <http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria-rag#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# Lexikálna vrstva ontológie realitnej kancelárie pre RAG
+#
+# Pôvodná ontológia (realitna-kancelaria.owl) obsahuje iba IRI tried
+# (napr. :DvojizbovyByt) bez ľudsky čitateľných názvov. Aby systém vedel
+# nájsť pojmy ontológie v otázke používateľa a v texte PDF dokumentov,
+# dopĺňame ku každej triede a vlastnosti:
+#   rdfs:label     – preferovaný slovenský názov
+#   skos:altLabel  – synonymá a bežné varianty
+#   rdfs:comment   – krátka definícia (ide do kontextu LLM)
+# Pridaná je aj trieda :Obec (lokalita mimo miest) a anotačná vlastnosť
+# rkx:zdrojovyDokument, ktorá prepája inštancie s PDF dokumentmi.
+# ---------------------------------------------------------------------------
+
+<http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria-rag>
+    a owl:Ontology ;
+    owl:imports <http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria> ;
+    rdfs:label "Lexikón a rozšírenie ontológie realitnej kancelárie pre RAG"@sk .
+
+rkx:zdrojovyDokument a owl:AnnotationProperty ;
+    rdfs:label "zdrojový dokument"@sk ;
+    rdfs:comment "Názov PDF dokumentu, v ktorom je inštancia (napr. inzerát) popísaná."@sk .
+
+rkx:popis a owl:AnnotationProperty ;
+    rdfs:label "popis"@sk .
+
+rkx:kontakt a owl:AnnotationProperty ;
+    rdfs:label "kontakt"@sk .
+
+rkx:datum a owl:DatatypeProperty ;
+    rdfs:label "dátum"@sk ;
+    rdfs:range xsd:date .
+
+rkx:spravuje a owl:ObjectProperty ;
+    rdfs:label "spravuje inzerát"@sk ;
+    rdfs:comment "Maklér, ktorý má inzerát na starosti."@sk ;
+    rdfs:domain :Makler ;
+    rdfs:range :Inzerat .
+
+rkx:tykaSaNehnutelnosti a owl:ObjectProperty ;
+    rdfs:label "týka sa nehnuteľnosti"@sk ;
+    rdfs:domain :Obhliadka ;
+    rdfs:range :Nehnutelnost .
+
+# --- nová trieda --------------------------------------------------------------
+:Obec a owl:Class ;
+    rdfs:subClassOf :Lokalita ;
+    rdfs:label "obec"@sk ;
+    skos:altLabel "obce"@sk, "obci"@sk, "dedina"@sk ;
+    rdfs:comment "Vidiecka lokalita (obec), ktorá nie je mestom, napr. Terchová."@sk .
+
+# --- nehnuteľnosti --------------------------------------------------------------
+:Nehnutelnost rdfs:label "nehnuteľnosť"@sk ;
+    skos:altLabel "reality"@sk, "realita"@sk ;
+    rdfs:comment "Akýkoľvek nehnuteľný majetok, ktorý kancelária ponúka; nachádza sa práve v jednej lokalite."@sk .
+:RezidencnaNehnutelnost rdfs:label "rezidenčná nehnuteľnosť"@sk ;
+    skos:altLabel "bývanie"@sk, "obytná nehnuteľnosť"@sk ;
+    rdfs:comment "Nehnuteľnosť určená na bývanie (byty a domy)."@sk .
+:KomercnaNehnutelnost rdfs:label "komerčná nehnuteľnosť"@sk ;
+    skos:altLabel "nebytový priestor"@sk, "komerčný priestor"@sk ;
+    rdfs:comment "Nehnuteľnosť na podnikanie; nemá počet izieb."@sk .
+:Byt rdfs:label "byt"@sk ;
+    rdfs:comment "Rezidenčná nehnuteľnosť v bytovom dome; nachádza sa v meste alebo mestskej časti."@sk .
+:Garsonka rdfs:label "garsónka"@sk ;
+    skos:altLabel "garzónka"@sk, "garsoniéra"@sk ;
+    rdfs:comment "Byt s jednou obytnou miestnosťou spojenou s kuchynským kútom."@sk .
+:JednoizbovyByt rdfs:label "jednoizbový byt"@sk ;
+    skos:altLabel "1-izbový byt"@sk, "1 izbový"@sk, "jednoizbák"@sk ;
+    rdfs:comment "Byt s počtom izieb = 1."@sk .
+:DvojizbovyByt rdfs:label "dvojizbový byt"@sk ;
+    skos:altLabel "2-izbový byt"@sk, "2 izbový"@sk, "dvojizbák"@sk ;
+    rdfs:comment "Byt s počtom izieb = 2."@sk .
+:TrojizbovyByt rdfs:label "trojizbový byt"@sk ;
+    skos:altLabel "3-izbový byt"@sk, "3 izbový"@sk, "trojizbák"@sk ;
+    rdfs:comment "Byt s počtom izieb = 3."@sk .
+:Dom rdfs:label "dom"@sk ;
+    rdfs:comment "Samostatne stojaca rezidenčná stavba."@sk .
+:RodinnyDom rdfs:label "rodinný dom"@sk ;
+    skos:altLabel "rodinné domy"@sk ;
+    rdfs:comment "Dom určený na trvalé bývanie rodiny."@sk .
+:Chata rdfs:label "chata"@sk ;
+    skos:altLabel "chalupa"@sk, "rekreačný objekt"@sk ;
+    rdfs:comment "Dom na rekreačné bývanie."@sk .
+:Pozemok rdfs:label "pozemok"@sk ;
+    skos:altLabel "parcela"@sk ;
+    rdfs:comment "Nezastavaná plocha; nie je rezidenčnou ani komerčnou nehnuteľnosťou."@sk .
+:StavebnyPozemok rdfs:label "stavebný pozemok"@sk ;
+    rdfs:comment "Pozemok určený územným plánom na výstavbu."@sk .
+:Zahrada rdfs:label "záhrada"@sk ;
+    skos:altLabel "záhradka"@sk ;
+    rdfs:comment "Pozemok na pestovanie a rekreáciu, nie na výstavbu."@sk .
+:Kancelaria rdfs:label "kancelária"@sk ;
+    skos:altLabel "kancelársky priestor"@sk ;
+    rdfs:comment "Komerčný priestor na administratívnu činnosť."@sk .
+:ObchodnyPriestor rdfs:label "obchodný priestor"@sk ;
+    skos:altLabel "prevádzka"@sk, "obchod"@sk ;
+    rdfs:comment "Komerčný priestor na predaj alebo služby."@sk .
+
+# --- inzeráty -----------------------------------------------------------------
+:Inzerat rdfs:label "inzerát"@sk ;
+    skos:altLabel "ponuka"@sk ;
+    rdfs:comment "Ponuka kancelárie, ktorá ponúka práve jednu nehnuteľnosť za určenú cenu."@sk .
+:PredajnyInzerat rdfs:label "predajný inzerát"@sk ;
+    skos:altLabel "predaj"@sk, "na predaj"@sk ;
+    rdfs:comment "Inzerát na predaj nehnuteľnosti; cena je kúpna cena."@sk .
+:NajomnyInzerat rdfs:label "nájomný inzerát"@sk ;
+    skos:altLabel "prenájom"@sk, "na prenájom"@sk, "podnájom"@sk ;
+    rdfs:comment "Inzerát na prenájom nehnuteľnosti; cena je mesačné nájomné."@sk .
+
+# --- osoby ----------------------------------------------------------------------
+:Osoba rdfs:label "osoba"@sk ;
+    rdfs:comment "Fyzická osoba vystupujúca v obchode s nehnuteľnosťami."@sk .
+:Klient rdfs:label "klient"@sk ;
+    skos:altLabel "zákazník"@sk ;
+    rdfs:comment "Osoba, ktorej kancelária poskytuje služby; nie je maklérom."@sk .
+:Makler rdfs:label "maklér"@sk ;
+    skos:altLabel "realitný maklér"@sk, "realitný agent"@sk ;
+    rdfs:comment "Zamestnanec kancelárie, ktorý spravuje inzeráty a sprevádza klientov."@sk .
+:Kupujuci rdfs:label "kupujúci"@sk ;
+    skos:altLabel "záujemca"@sk ;
+    rdfs:comment "Klient, ktorý si rezervuje aspoň jednu obhliadku."@sk .
+:Predavajuci rdfs:label "predávajúci"@sk ;
+    rdfs:comment "Klient, ktorý vlastní aspoň jednu nehnuteľnosť a predáva ju."@sk .
+:Prenajimatel rdfs:label "prenajímateľ"@sk ;
+    rdfs:comment "Klient, ktorý vlastní aspoň jednu nehnuteľnosť a prenajíma ju."@sk .
+
+# --- lokality -------------------------------------------------------------------
+:Lokalita rdfs:label "lokalita"@sk ;
+    skos:altLabel "oblasť"@sk ;
+    rdfs:comment "Geografické miesto; lokality tvoria tranzitívnu hierarchiu (jeSucastou)."@sk .
+:Kraj rdfs:label "kraj"@sk ;
+    rdfs:comment "Vyšší územný celok."@sk .
+:Okres rdfs:label "okres"@sk ;
+    rdfs:comment "Územný celok, ktorý je súčasťou kraja."@sk .
+:Mesto rdfs:label "mesto"@sk ;
+    rdfs:comment "Mestská lokalita, ktorá je súčasťou okresu."@sk .
+:MestskaCast rdfs:label "mestská časť"@sk ;
+    skos:altLabel "sídlisko"@sk, "štvrť"@sk ;
+    rdfs:comment "Časť mesta; je súčasťou nejakého mesta."@sk .
+
+# --- obhliadky a zmluvy -------------------------------------------------------
+:Obhliadka rdfs:label "obhliadka"@sk ;
+    skos:altLabel "prehliadka"@sk ;
+    rdfs:comment "Návšteva nehnuteľnosti záujemcom za prítomnosti makléra."@sk .
+:PlanovanaObhliadka rdfs:label "plánovaná obhliadka"@sk ;
+    rdfs:comment "Rezervovaná obhliadka, ktorá ešte neprebehla."@sk .
+:UskutocnenaObhliadka rdfs:label "uskutočnená obhliadka"@sk ;
+    rdfs:comment "Obhliadka, ktorá už prebehla."@sk .
+:Zmluva rdfs:label "zmluva"@sk ;
+    rdfs:comment "Právny dokument, ktorého predmetom je nehnuteľnosť."@sk .
+:KupnaZmluva rdfs:label "kúpna zmluva"@sk ;
+    rdfs:comment "Zmluva o prevode vlastníctva nehnuteľnosti za kúpnu cenu."@sk .
+:NajomnaZmluva rdfs:label "nájomná zmluva"@sk ;
+    rdfs:comment "Zmluva o dočasnom užívaní nehnuteľnosti za nájomné."@sk .
+
+# --- vlastnosti -----------------------------------------------------------------
+:nachadzaSaV rdfs:label "nachádza sa v"@sk .
+:obsahujeNehnutelnost rdfs:label "obsahuje nehnuteľnosť"@sk .
+:jeSucastou rdfs:label "je súčasťou"@sk .
+:zahrna rdfs:label "zahŕňa"@sk .
+:ponukaNehnutelnost rdfs:label "ponúka nehnuteľnosť"@sk .
+:jePonukanaV rdfs:label "je ponúkaná v"@sk .
+:vlastni rdfs:label "vlastní"@sk .
+:jeVlastnenaKym rdfs:label "je vlastnená kým"@sk .
+:predmetZmluvy rdfs:label "predmet zmluvy"@sk .
+:rezervujeObhliadku rdfs:label "rezervuje obhliadku"@sk .
+:cena rdfs:label "cena"@sk ; rdfs:comment "Cena v eurách (pri prenájme mesačné nájomné)."@sk .
+:pocetIzieb rdfs:label "počet izieb"@sk .
+:vymera rdfs:label "výmera"@sk ; rdfs:comment "Plocha v m² (úžitková plocha alebo výmera pozemku)."@sk .
+
+# --- existujúce inštancie ------------------------------------------------------
+:Kraj_Zilinsky rdfs:label "Žilinský kraj"@sk .
+:Okres_Zilina rdfs:label "okres Žilina"@sk .
+:Mesto_Zilina rdfs:label "Žilina"@sk ; skos:altLabel "Žiline"@sk, "Žilinu"@sk .

@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#"
+     xml:base="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:realitna-kancelaria="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria">
+        <rdfs:comment xml:lang="sk">Doménová ontológia (core domain ontology) pre realitnú kanceláriu: nehnuteľnosti, osoby, inzeráty, lokality, obhliadky a zmluvy.</rdfs:comment>
+        <rdfs:label xml:lang="sk">Ontológia realitnej kancelárie</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jePonukanaV -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jePonukanaV">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ponukaNehnutelnost"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jeSucastou -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jeSucastou">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#zahrna"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jeVlastnenaKym -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jeVlastnenaKym">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vlastni"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#nachadzaSaV -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#nachadzaSaV">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#obsahujeNehnutelnost"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#obsahujeNehnutelnost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#obsahujeNehnutelnost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ponukaNehnutelnost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ponukaNehnutelnost">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#predmetZmluvy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#predmetZmluvy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zmluva"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#rezervujeObhliadku -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#rezervujeObhliadku">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kupujuci"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vlastni -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vlastni">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#zahrna -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#zahrna">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#cena -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#cena">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RezidencnaNehnutelnost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vymera -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vymera">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Byt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Byt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RezidencnaNehnutelnost"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#nachadzaSaV"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#MestskaCast"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Dom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Chata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Chata">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Dom"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RodinnyDom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Dom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Dom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RezidencnaNehnutelnost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#DvojizbovyByt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#DvojizbovyByt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Byt"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#JednoizbovyByt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Garsonka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Garsonka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Byt"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ponukaNehnutelnost"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#JednoizbovyByt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#JednoizbovyByt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Byt"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kancelaria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kancelaria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KomercnaNehnutelnost"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ObchodnyPriestor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Klient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Klient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Makler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KomercnaNehnutelnost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KomercnaNehnutelnost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KupnaZmluva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KupnaZmluva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zmluva"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#predmetZmluvy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#NajomnaZmluva"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kupujuci -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kupujuci">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Klient"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#rezervujeObhliadku"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Makler -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Makler">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#MestskaCast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#MestskaCast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#jeSucastou"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#NajomnaZmluva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#NajomnaZmluva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zmluva"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#predmetZmluvy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#NajomnyInzerat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#NajomnyInzerat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#PredajnyInzerat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#nachadzaSaV"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ObchodnyPriestor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#ObchodnyPriestor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KomercnaNehnutelnost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#PlanovanaObhliadka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#PlanovanaObhliadka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#UskutocnenaObhliadka"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Pozemok -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Pozemok">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#PredajnyInzerat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#PredajnyInzerat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Predavajuci -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Predavajuci">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Klient"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vlastni"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Prenajimatel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Prenajimatel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Klient"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#vlastni"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RezidencnaNehnutelnost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RezidencnaNehnutelnost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RodinnyDom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RodinnyDom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Dom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#StavebnyPozemok -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#StavebnyPozemok">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Pozemok"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zahrada"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#TrojizbovyByt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#TrojizbovyByt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Byt"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#pocetIzieb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#UskutocnenaObhliadka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#UskutocnenaObhliadka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zahrada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zahrada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Pozemok"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zmluva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zmluva"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj_Zilinsky -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj_Zilinsky">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto_Zilina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto_Zilina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto"/>
+        <jeSucastou rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres_Zilina"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres_Zilina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres_Zilina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres"/>
+        <jeSucastou rdf:resource="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj_Zilinsky"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#DvojizbovyByt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#JednoizbovyByt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#TrojizbovyByt"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Inzerat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Lokalita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Nehnutelnost"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Obhliadka"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Osoba"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Zmluva"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#KomercnaNehnutelnost"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Pozemok"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#RezidencnaNehnutelnost"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Kraj"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Mesto"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#MestskaCast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#Okres"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi -->
+

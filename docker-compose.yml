@@ -1,0 +1,57 @@
+name: rag-realitka
+
+services:
+  # Lokálny LLM server
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_models:/root/.ollama
+    ports:
+      - "11434:11434"
+    environment:
+      - OLLAMA_KEEP_ALIVE=30m
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+  # Jednorazové stiahnutie modelov (pri ďalších štartoch už len overí, že existujú)
+  ollama-init:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      - OLLAMA_HOST=ollama:11434
+    entrypoint: ["sh", "-c", "ollama pull ${LLM_MODEL:-gemma3:4b} && ollama pull ${EMBED_MODEL:-bge-m3}"]
+    restart: "no"
+
+  # RAG aplikácia (Streamlit)
+  app:
+    build: ./app
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_URL=http://ollama:11434
+      - LLM_MODEL=${LLM_MODEL:-gemma3:4b}
+      - EMBED_MODEL=${EMBED_MODEL:-bge-m3}
+      - NUM_CTX=${NUM_CTX:-6144}
+      - EMBED_NUM_GPU=${EMBED_NUM_GPU-0}
+      - LLM_NUM_GPU=${LLM_NUM_GPU-}
+    volumes:
+      - ./ontology:/workspace/ontology
+      - ./data:/workspace/data
+      - ./tools:/workspace/tools
+      - ./docs:/workspace/docs
+      - rag_index:/index
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
+    name: rag_ollama_models
+  rag_index:

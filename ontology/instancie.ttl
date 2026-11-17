@@ -1,0 +1,91 @@
+@prefix :     <http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria#> .
+@prefix rkx:  <http://www.semanticweb.org/kubo/ontologies/2026/9/realitna-kancelaria-rag#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Vygenerované skriptom tools/generate_data.py – inštancie (ABox) zodpovedajúce PDF dokumentom.
+
+:Mesto_RajeckeTeplice a owl:NamedIndividual, :Mesto ; rdfs:label "Rajecké Teplice"@sk ; :jeSucastou :Okres_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:Obec_Terchova a owl:NamedIndividual, :Obec ; rdfs:label "Terchová"@sk ; :jeSucastou :Okres_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:Obec_TeplickaNadVahom a owl:NamedIndividual, :Obec ; rdfs:label "Teplička nad Váhom"@sk ; :jeSucastou :Okres_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_StareMesto a owl:NamedIndividual, :MestskaCast ; rdfs:label "Staré Mesto"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Hliny a owl:NamedIndividual, :MestskaCast ; rdfs:label "Hliny"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Vlcince a owl:NamedIndividual, :MestskaCast ; rdfs:label "Vlčince"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Solinky a owl:NamedIndividual, :MestskaCast ; rdfs:label "Solinky"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Hajik a owl:NamedIndividual, :MestskaCast ; rdfs:label "Hájik"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Banova a owl:NamedIndividual, :MestskaCast ; rdfs:label "Bánová"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Bytcica a owl:NamedIndividual, :MestskaCast ; rdfs:label "Bytčica"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+:MC_Zavodie a owl:NamedIndividual, :MestskaCast ; rdfs:label "Závodie"@sk ; :jeSucastou :Mesto_Zilina ; rkx:zdrojovyDokument "07_lokality_zilina.pdf" .
+
+:Makler_Kovacova a owl:NamedIndividual, :Makler ; rdfs:label "Mgr. Jana Kováčová"@sk ; rkx:popis "byty na predaj, Staré Mesto, Hliny, Vlčince"@sk ; rkx:kontakt "jana.kovacova@semreal.example, +421 900 000 101" ; rkx:zdrojovyDokument "09_tim_maklerov.pdf" .
+:Makler_Hruska a owl:NamedIndividual, :Makler ; rdfs:label "Ing. Peter Hruška"@sk ; rkx:popis "rodinné domy, chaty, pozemky, okolie Žiliny"@sk ; rkx:kontakt "peter.hruska@semreal.example, +421 900 000 102" ; rkx:zdrojovyDokument "09_tim_maklerov.pdf" .
+:Makler_Benova a owl:NamedIndividual, :Makler ; rdfs:label "Lucia Beňová"@sk ; rkx:popis "prenájom bytov, kancelárie a obchodné priestory"@sk ; rkx:kontakt "lucia.benova@semreal.example, +421 900 000 103" ; rkx:zdrojovyDokument "09_tim_maklerov.pdf" .
+
+:Nehnutelnost_101 a owl:NamedIndividual, :Garsonka ; rdfs:label "garsónka – Vlčince (Žilina) (INZ-101)"@sk ; :nachadzaSaV :MC_Vlcince ; :vymera "28"^^xsd:decimal ; :pocetIzieb "1"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_101 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-101"@sk ; :ponukaNehnutelnost :Nehnutelnost_101 ; :cena "98000"^^xsd:decimal ; rkx:popis "Garsónka na 3. poschodí zatepleného panelového domu s výťahom. Kompletná rekonštrukcia v roku 2023, nová kuchynská linka, plastové okná, pivnica. Energetická trieda B. Vhodná ako investícia na prenájom."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_101 .
+:Nehnutelnost_102 a owl:NamedIndividual, :JednoizbovyByt ; rdfs:label "jednoizbový byt – Hliny (Žilina) (INZ-102)"@sk ; :nachadzaSaV :MC_Hliny ; :vymera "36"^^xsd:decimal ; :pocetIzieb "1"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_102 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-102"@sk ; :ponukaNehnutelnost :Nehnutelnost_102 ; :cena "115000"^^xsd:decimal ; rkx:popis "Jednoizbový byt so samostatnou kuchyňou a loggiou na 5. poschodí. Pôvodný stav jadra, nové stúpačky. Výborná dostupnosť do centra (10 minút pešo), obchody a škola v blízkosti."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_102 .
+:Nehnutelnost_103 a owl:NamedIndividual, :DvojizbovyByt ; rdfs:label "dvojizbový byt – Solinky (Žilina) (INZ-103)"@sk ; :nachadzaSaV :MC_Solinky ; :vymera "52"^^xsd:decimal ; :pocetIzieb "2"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_103 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-103"@sk ; :ponukaNehnutelnost :Nehnutelnost_103 ; :cena "149000"^^xsd:decimal ; rkx:popis "Dvojizbový byt po čiastočnej rekonštrukcii, 2. poschodie, balkón orientovaný na juh. Kúpeľňa s vaňou, samostatné WC. Parkovanie pred domom. Možnosť hypotéky, voľný ihneď."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_103 .
+:Nehnutelnost_104 a owl:NamedIndividual, :DvojizbovyByt ; rdfs:label "dvojizbový byt – Staré Mesto (Žilina) (INZ-104)"@sk ; :nachadzaSaV :MC_StareMesto ; :vymera "61"^^xsd:decimal ; :pocetIzieb "2"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_104 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-104"@sk ; :ponukaNehnutelnost :Nehnutelnost_104 ; :cena "198000"^^xsd:decimal ; rkx:popis "Priestranný dvojizbový byt v tehlovom meštianskom dome v historickom centre. Vysoké stropy (3,2 m), drevené parkety, nová elektroinštalácia. Bez balkóna, parkovanie v rezidentskej zóne."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_104 .
+:Nehnutelnost_105 a owl:NamedIndividual, :TrojizbovyByt ; rdfs:label "trojizbový byt – Hájik (Žilina) (INZ-105)"@sk ; :nachadzaSaV :MC_Hajik ; :vymera "74"^^xsd:decimal ; :pocetIzieb "3"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_105 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-105"@sk ; :ponukaNehnutelnost :Nehnutelnost_105 ; :cena "189000"^^xsd:decimal ; rkx:popis "Trojizbový byt s dvoma loggiami, 4. poschodie z 8. Kompletná rekonštrukcia, vstavané skrine, kuchyňa so spotrebičmi. Vhodný pre rodinu s deťmi – škôlka a park v blízkosti."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_105 .
+:Nehnutelnost_106 a owl:NamedIndividual, :TrojizbovyByt ; rdfs:label "trojizbový byt – Vlčince (Žilina) (INZ-106)"@sk ; :nachadzaSaV :MC_Vlcince ; :vymera "70"^^xsd:decimal ; :pocetIzieb "3"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_106 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-106"@sk ; :ponukaNehnutelnost :Nehnutelnost_106 ; :cena "179500"^^xsd:decimal ; rkx:popis "Trojizbový byt v pôvodnom stave, vhodný na rekonštrukciu podľa vlastných predstáv. 1. poschodie, zateplený dom, nový výťah. Cena je zohľadnená stavom bytu."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_106 .
+:Nehnutelnost_107 a owl:NamedIndividual, :Byt ; rdfs:label "štvorizbový byt – Hliny (Žilina) (INZ-107)"@sk ; :nachadzaSaV :MC_Hliny ; :vymera "88"^^xsd:decimal ; :pocetIzieb "4"^^xsd:integer ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Inzerat_107 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-107"@sk ; :ponukaNehnutelnost :Nehnutelnost_107 ; :cena "229000"^^xsd:decimal ; rkx:popis "Štvorizbový byt s dvoma kúpeľňami a šatníkom, 6. poschodie, výhľad na Malú Fatru. Garážové státie v cene. Byt je po celkovej rekonštrukcii z roku 2024."@sk ; rkx:zdrojovyDokument "01_ponuka_bytov_na_predaj.pdf" .
+:Makler_Kovacova rkx:spravuje :Inzerat_107 .
+:Nehnutelnost_201 a owl:NamedIndividual, :RodinnyDom ; rdfs:label "rodinný dom – Bánová (Žilina) (INZ-201)"@sk ; :nachadzaSaV :MC_Banova ; :vymera "142"^^xsd:decimal ; :pocetIzieb "5"^^xsd:integer ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Inzerat_201 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-201"@sk ; :ponukaNehnutelnost :Nehnutelnost_201 ; :cena "345000"^^xsd:decimal ; rkx:popis "Rodinný dom (bungalov s podkrovím) na pozemku 640 m². Tepelné čerpadlo, podlahové kúrenie, fotovoltické panely. Garáž pre dve autá. Kolaudácia v roku 2019."@sk ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Makler_Hruska rkx:spravuje :Inzerat_201 .
+:Nehnutelnost_202 a owl:NamedIndividual, :RodinnyDom ; rdfs:label "rodinný dom – Rajecké Teplice (INZ-202)"@sk ; :nachadzaSaV :Mesto_RajeckeTeplice ; :vymera "168"^^xsd:decimal ; :pocetIzieb "6"^^xsd:integer ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Inzerat_202 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-202"@sk ; :ponukaNehnutelnost :Nehnutelnost_202 ; :cena "289000"^^xsd:decimal ; rkx:popis "Starší rodinný dom po čiastočnej rekonštrukcii (strecha 2021, okná 2022) na pozemku 900 m². Kúpele a cyklotrasa v pešej vzdialenosti. Vhodný aj na prestavbu na penzión."@sk ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Makler_Hruska rkx:spravuje :Inzerat_202 .
+:Nehnutelnost_203 a owl:NamedIndividual, :Chata ; rdfs:label "chata – obec Terchová (okres Žilina) (INZ-203)"@sk ; :nachadzaSaV :Obec_Terchova ; :vymera "64"^^xsd:decimal ; :pocetIzieb "3"^^xsd:integer ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Inzerat_203 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-203"@sk ; :ponukaNehnutelnost :Nehnutelnost_203 ; :cena "139000"^^xsd:decimal ; rkx:popis "Zrubová chata s krbom v obci Terchová, pozemok 410 m². Elektrina, vlastná studňa, žumpa. Ideálna na rekreáciu a krátkodobý prenájom turistom – Vrátna dolina 5 km."@sk ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Makler_Hruska rkx:spravuje :Inzerat_203 .
+:Nehnutelnost_204 a owl:NamedIndividual, :StavebnyPozemok ; rdfs:label "stavebný pozemok – Bytčica (Žilina) (INZ-204)"@sk ; :nachadzaSaV :MC_Bytcica ; :vymera "812"^^xsd:decimal ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Inzerat_204 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-204"@sk ; :ponukaNehnutelnost :Nehnutelnost_204 ; :cena "89000"^^xsd:decimal ; rkx:popis "Rovinatý stavebný pozemok s prístupovou cestou, elektrina a voda na hranici pozemku, plyn v ulici. Podľa územného plánu určený na výstavbu rodinných domov."@sk ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Makler_Hruska rkx:spravuje :Inzerat_204 .
+:Nehnutelnost_205 a owl:NamedIndividual, :StavebnyPozemok ; rdfs:label "stavebný pozemok – obec Teplička nad Váhom (okres Žilina) (INZ-205)"@sk ; :nachadzaSaV :Obec_TeplickaNadVahom ; :vymera "1050"^^xsd:decimal ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Inzerat_205 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-205"@sk ; :ponukaNehnutelnost :Nehnutelnost_205 ; :cena "115000"^^xsd:decimal ; rkx:popis "Stavebný pozemok v novej lokalite rodinných domov, mierne svahovitý s výhľadom. Všetky inžinierske siete vrátane kanalizácie. Vydané územné rozhodnutie."@sk ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Makler_Hruska rkx:spravuje :Inzerat_205 .
+:Nehnutelnost_206 a owl:NamedIndividual, :Zahrada ; rdfs:label "záhrada – Závodie (Žilina) (INZ-206)"@sk ; :nachadzaSaV :MC_Zavodie ; :vymera "420"^^xsd:decimal ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Inzerat_206 a owl:NamedIndividual, :PredajnyInzerat ; rdfs:label "INZ-206"@sk ; :ponukaNehnutelnost :Nehnutelnost_206 ; :cena "24000"^^xsd:decimal ; rkx:popis "Oplotená záhrada so záhradnou chatkou na náradie a ovocnými stromami. Voda zo studne. Pozemok NIE JE určený na výstavbu rodinného domu."@sk ; rkx:zdrojovyDokument "02_ponuka_domov_chat_pozemkov.pdf" .
+:Makler_Hruska rkx:spravuje :Inzerat_206 .
+:Nehnutelnost_301 a owl:NamedIndividual, :Garsonka ; rdfs:label "garsónka – Hliny (Žilina) (INZ-301)"@sk ; :nachadzaSaV :MC_Hliny ; :vymera "27"^^xsd:decimal ; :pocetIzieb "1"^^xsd:integer ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Inzerat_301 a owl:NamedIndividual, :NajomnyInzerat ; rdfs:label "INZ-301"@sk ; :ponukaNehnutelnost :Nehnutelnost_301 ; :cena "520"^^xsd:decimal ; rkx:popis "Zariadená garsónka na prenájom, 2. poschodie. Nájomné 520 € mesačne vrátane energií, kaucia vo výške jedného nájomného. Vhodná pre študenta alebo jednotlivca. Domáce zvieratá po dohode."@sk ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Makler_Benova rkx:spravuje :Inzerat_301 .
+:Nehnutelnost_302 a owl:NamedIndividual, :DvojizbovyByt ; rdfs:label "dvojizbový byt – Vlčince (Žilina) (INZ-302)"@sk ; :nachadzaSaV :MC_Vlcince ; :vymera "55"^^xsd:decimal ; :pocetIzieb "2"^^xsd:integer ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Inzerat_302 a owl:NamedIndividual, :NajomnyInzerat ; rdfs:label "INZ-302"@sk ; :ponukaNehnutelnost :Nehnutelnost_302 ; :cena "720"^^xsd:decimal ; rkx:popis "Dvojizbový byt na dlhodobý prenájom, čiastočne zariadený. Nájomné 720 € mesačne + energie cca 150 €. Kaucia dve mesačné nájomné. Minimálna doba nájmu 1 rok."@sk ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Makler_Benova rkx:spravuje :Inzerat_302 .
+:Nehnutelnost_303 a owl:NamedIndividual, :TrojizbovyByt ; rdfs:label "trojizbový byt – Staré Mesto (Žilina) (INZ-303)"@sk ; :nachadzaSaV :MC_StareMesto ; :vymera "78"^^xsd:decimal ; :pocetIzieb "3"^^xsd:integer ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Inzerat_303 a owl:NamedIndividual, :NajomnyInzerat ; rdfs:label "INZ-303"@sk ; :ponukaNehnutelnost :Nehnutelnost_303 ; :cena "950"^^xsd:decimal ; rkx:popis "Trojizbový byt v centre na prenájom, kompletne zariadený, umývačka riadu, práčka so sušičkou. Nájomné 950 € mesačne + energie. Vhodné pre rodinu alebo zdieľané bývanie."@sk ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Makler_Benova rkx:spravuje :Inzerat_303 .
+:Nehnutelnost_304 a owl:NamedIndividual, :Kancelaria ; rdfs:label "kancelária – Staré Mesto (Žilina) (INZ-304)"@sk ; :nachadzaSaV :MC_StareMesto ; :vymera "45"^^xsd:decimal ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Inzerat_304 a owl:NamedIndividual, :NajomnyInzerat ; rdfs:label "INZ-304"@sk ; :ponukaNehnutelnost :Nehnutelnost_304 ; :cena "650"^^xsd:decimal ; rkx:popis "Kancelária na prenájom na 1. poschodí administratívnej budovy, dve miestnosti, kuchynka, spoločné sociálne zariadenia. Optická sieť, recepcia. Nájomné 650 € mesačne + služby."@sk ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Makler_Benova rkx:spravuje :Inzerat_304 .
+:Nehnutelnost_305 a owl:NamedIndividual, :ObchodnyPriestor ; rdfs:label "obchodný priestor – Hliny (Žilina) (INZ-305)"@sk ; :nachadzaSaV :MC_Hliny ; :vymera "96"^^xsd:decimal ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Inzerat_305 a owl:NamedIndividual, :NajomnyInzerat ; rdfs:label "INZ-305"@sk ; :ponukaNehnutelnost :Nehnutelnost_305 ; :cena "1400"^^xsd:decimal ; rkx:popis "Obchodný priestor na prízemí s výkladom do frekventovanej ulice, sklad 20 m², bezbariérový vstup. Vhodný pre predajňu alebo prevádzku služieb. Nájomné 1 400 € mesačne."@sk ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Makler_Benova rkx:spravuje :Inzerat_305 .
+:Nehnutelnost_306 a owl:NamedIndividual, :Kancelaria ; rdfs:label "kancelária – Vlčince (Žilina) (INZ-306)"@sk ; :nachadzaSaV :MC_Vlcince ; :vymera "120"^^xsd:decimal ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Inzerat_306 a owl:NamedIndividual, :NajomnyInzerat ; rdfs:label "INZ-306"@sk ; :ponukaNehnutelnost :Nehnutelnost_306 ; :cena "1300"^^xsd:decimal ; rkx:popis "Open-space kancelária so zasadačkou, 4 parkovacie miesta v cene, klimatizácia. Nájomné 1 300 € mesačne + energie. Možnosť úpravy priestoru podľa potrieb nájomcu."@sk ; rkx:zdrojovyDokument "03_ponuka_prenajmov.pdf" .
+:Makler_Benova rkx:spravuje :Inzerat_306 .
+
+:Klient_K001 a owl:NamedIndividual, :Kupujuci ; rdfs:label "klient K001"@sk .
+:Klient_K002 a owl:NamedIndividual, :Kupujuci ; rdfs:label "klient K002"@sk .
+:OBH_001 a owl:NamedIndividual, :PlanovanaObhliadka ; rdfs:label "OBH-001"@sk ; rkx:tykaSaNehnutelnosti :Nehnutelnost_103 ; rkx:datum "2026-11-24"^^xsd:date ; rkx:zdrojovyDokument "06_proces_obhliadky.pdf" .
+:Klient_K001 :rezervujeObhliadku :OBH_001 .
+:OBH_002 a owl:NamedIndividual, :UskutocnenaObhliadka ; rdfs:label "OBH-002"@sk ; rkx:tykaSaNehnutelnosti :Nehnutelnost_105 ; rkx:datum "2026-11-10"^^xsd:date ; rkx:zdrojovyDokument "06_proces_obhliadky.pdf" .
+:Klient_K001 :rezervujeObhliadku :OBH_002 .
+:OBH_003 a owl:NamedIndividual, :PlanovanaObhliadka ; rdfs:label "OBH-003"@sk ; rkx:tykaSaNehnutelnosti :Nehnutelnost_201 ; rkx:datum "2026-11-26"^^xsd:date ; rkx:zdrojovyDokument "06_proces_obhliadky.pdf" .
+:Klient_K002 :rezervujeObhliadku :OBH_003 .
